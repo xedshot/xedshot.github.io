@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,500,500i');
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+}
+
+p {
+	margin:0;
+}
+.content{
+	width: 83.33333333%;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+header {
+	background-color: rgba(25,25,25,0);
+	width: 100%;
+	position: absolute;
+	top: 0;
+	height: 10%;
+	z-index: 999;
+}
+
+.first-screen .third-screen .fourth-screen {
+	height: 25%;
+	background-color: #ffffff;
+}
+
+.second-screen {
+	height: 25%;
+	background-color: #f16921; 
+}
+
+
+
+div {
+	margin: 0;
+}
+
+.fullpage {
+	height: 100%;
+	margin: 0;
+	width: 100%;
+}
+
+.logo {
+	width: 12.916666%;
+	height: 42.222222%;
+	position: absolute;
+	top: 43.333333%;
+	float:left;
+}
+
+.contacts-top {
+	position: absolute;
+	top: 33.333333%;
+	right:0%;
+	float:right;
+	text-align: right;
+}
+
+
+.contacts-top p {
+	/*font-size: 1.125em;*/
+	font-size: 2vmin;
+	font-family: Roboto, Arial, monospace;
+	font-weight: 500;
+	line-height: 1.56;
+	letter-spacing: 0.024444em;
+	font-style: normal;
+	color: #ffffff;
+}
+
+img {
+	width: 100%;
+	max-width: 100%;
+}
+
+.slogan {
+	height: 20%;
+	width: 55.083333%;
+	position: absolute;
+	top: 34.222222%;
+	color: #ffffff;
+
+}
+
+.slogan p {
+	font-family: 'Roboto Mono', Arial, monospace;
+	font-size: 8vmin;
+	font-weight: 500;
+	line-height: 1.25;
+	letter-spacing: -0.026388em;
+}
+
+.video-button-wrapper {
+	position: absolute;
+	top: 58.888888%;
+	width: 20.833333%;
+	height: 6.666666%;
+	overflow: hidden;
+	border: 0px solid transparent;
+	border-radius: 10px;
+	z-index: 98;
+}
+.video-button{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	color: #ffffff;
+	text-decoration: none;
+	user-select: none;
+  	text-align: center;
+  	outline: none;
+  	font-family: 'Roboto', Arial, monospace;
+  	font-size: 2vmin;
+  	font-weight: bold;
+  	line-height: 1.56;
+  	letter-spacing: 0;
+  	z-index: 100;
+  	background: none;
+  	border: none;
+  	cursor: pointer;
+	box-shadow: none;
+}
+
+.video-button-blur{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	-webkit-filter: blur(15px);
+	filter: blur(15px);
+  	background-color: rgba(241, 105, 33, 0.15);
+  	z-index: 99;
+  	box-shadow: none;
+  	
+}
+
+.first-screen{
+	background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),linear-gradient(299deg, rgba(255, 255, 255, 0.5), rgba(241, 105, 33, 0.4)), url(../images/bg.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mouse {
+	width: 4.166666%;
+	height: 10%;
+	position: absolute;
+	top: 86.666666%;
+	border: 2px solid white;
+	border-radius: 50%/35%;
+}
+
+.mouse-wheel{
+	width: 8%;
+	height: 12%;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius:30%;
+	animation: scroll 1s infinite linear;
+
+}
+
+@keyframes scroll {
+	from  {
+		margin-top: 25%;
+	}
+
+	to {
+		margin-top: 25%;
+		transform: translateY(70%);
+		
+	}
+}
+
+.text-wrapper {
+	width: 53.333333%;
+	height: 36.666666%;
+	position: absolute;
+	top: 31.666666%;
+
+}
+
+.text-wrapper-2 {
+	width: 53.333333%;
+	height: 51.333333%;
+	position: absolute;
+	top: 24.333333%;
+	display: none;
+}
+
+.text-wrapper-3 {
+	width: 53.333333%;
+	height: 41.555555%;
+	position: absolute;
+	top: 29.222222%;
+	display: none;
+}
+
+.text-header {
+	color: #ffffff;
+	font-family: 'Roboto Mono', Arial, monospace;
+	font-size: 8vmin;
+	font-weight: 500;
+	line-height: 1.25;
+	letter-spacing: -0.001388em;
+}
+
+.content-text {
+	color: #ffffff;
+	font-family: Roboto, Arial, monospace;
+	font-size: 4vmin;
+	font-weight: 500;
+	line-height: 1.22;
+	letter-spacing: 0.011111em;
+}
+
+.text-wrapper p:nth-child(2) {
+	margin-top: 2.222222%;
+}
+
+.image-wrapper {
+	width: 40%;
+	height: 53.333333%;
+	position: absolute;
+	top: 23.333333%;
+	right: 0;
+	background-color: #ffffff;
+	box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5%;
+	overflow: hidden;
+}
+
+.slide-image {
+	width: 100%;
+	height: 100%;
+	display: block;
+	
+}
+
+.carousel {
+	width: 75%;
+	height: 75%;
+	margin: 12.5%;
+	border-radius: 5%;
+	overflow: hidden;
+}
+
+ul {
+	height: 100%;
+	width: 300%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 0;
+	transition: margin-left 400ms;
+}
+
+.carousel li {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	width: 33.33333%;
+
+}
+
+.description {
+	width: 39.166666%;
+	height: 17.777777%;
+	position: absolute;
+	top: 22.222222%;
+	right: 0%;
+}
+
+.description p {
+	font-family: Roboto, Arial, monospace;
+	font-size: 2vmin;
+	color: #7f88a4;
+	font-weight: normal;
+	line-height: 1.56;
+	letter-spacing: 0.016em;
+}
+
+.description p:last-child{
+	margin-top: 4.255319%;
+}
+
+.third-screen .content>p:nth-child(2){
+	position: absolute;
+	top: 22.222222%;
+	font-family: 'Roboto Mono', Arial, monospace;
+	font-size: 5.555555vmin;
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: -0.032em;
+	color: #1f2435;
+}
+
+.third-screen .content>p:nth-child(3){
+	position: absolute;
+	top: 48.888888%;
+	font-family: 'Roboto Mono', Arial, monospace;
+	font-size: 5.555555vmin;
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: -0.032em;
+	color: #1f2435;
+}
+
