@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="152px" height="28px" viewBox="0 0 152 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="146px" height="29px" viewBox="0 0 146 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
-    <title>8958403C-CEA8-4287-B60C-3417B4709413</title>
+    <title>33AC218C-A2F8-45E0-A586-93C885E37238</title>
     <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="1.72254642e-14%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFA62E" offset="0%"></stop>
+            <stop stop-color="#FB962E" offset="20%"></stop>
+            <stop stop-color="#F8852E" offset="40%"></stop>
+            <stop stop-color="#F3742D" offset="60%"></stop>
+            <stop stop-color="#EF612D" offset="80%"></stop>
+            <stop stop-color="#EA4D2C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
     <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Hero---1" transform="translate(-122.000000, -43.000000)">
-            <g id="Logo" transform="translate(120.000000, 39.000000)">
-                <g id="BODYTEC" fill="#F16921" font-family="Helvetica" font-size="32" font-weight="normal">
+        <g id="Hero---1" transform="translate(-121.000000, -52.000000)">
+            <g id="Logo" transform="translate(120.000000, 50.000000)">
+                <g id="BODYTEC" fill="url(#linearGradient-1)" font-family="SFProDisplay-Bold, SF Pro Display" font-size="32" font-weight="bold">
                     <text>
-                        <tspan x="0" y="31">BODYTEC</tspan>
+                        <tspan x="0" y="30">BODYTEC</tspan>
                     </text>
                 </g>
-                <path d="M3.76,5.6 L14,5.6" id="Line" stroke="#F16921" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M3,3 L17,3" id="Line" stroke="#FDA02E" stroke-width="2" stroke-linecap="round"></path>
             </g>
         </g>
     </g>

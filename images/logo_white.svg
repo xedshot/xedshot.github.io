@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="152px" height="28px" viewBox="0 0 152 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="146px" height="29px" viewBox="0 0 146 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
-    <title>D0E83326-6FD7-47B8-83A6-1B7E79C921B3</title>
+    <title>116BDDA1-5FE6-4EED-B203-65D386C71E70</title>
     <desc>Created with sketchtool.</desc>
     <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Safety" transform="translate(-122.000000, -43.000000)">
-            <g id="Logo" transform="translate(120.000000, 39.000000)">
-                <g id="BODYTEC" fill="#FFFFFF" font-family="Helvetica" font-size="32" font-weight="normal">
+        <g id="Safety" transform="translate(-121.000000, -52.000000)">
+            <g id="Logo" transform="translate(120.000000, 50.000000)">
+                <g id="BODYTEC" fill="#FFFFFF" font-family="SFProDisplay-Bold, SF Pro Display" font-size="32" font-weight="bold">
                     <text>
-                        <tspan x="0" y="31">BODYTEC</tspan>
+                        <tspan x="0" y="30">BODYTEC</tspan>
                     </text>
                 </g>
-                <path d="M3.76,5.6 L14,5.6" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M3,3 L17,3" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
             </g>
         </g>
     </g>

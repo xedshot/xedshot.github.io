@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i');
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,400i,700,700i');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,500,500i');
+
+
+@font-face{
+	font-family: 'SF Sans Pro';
+	src: url("../fonts/SF-Pro-Display-Heavy.otf") format("opentype");
+}
+@font-face{
+	font-family: 'SF Sans Pro Regular';
+	src: url("../fonts/SF-Pro-Display-Regular.otf") format("opentype");
+}
 body {
 	width: 100%;
 	margin: 0;
@@ -37,7 +50,6 @@ header {
 }
 
 
-
 div {
 	margin: 0;
 }
@@ -68,12 +80,16 @@ div {
 .contacts-top p {
 	/*font-size: 1.125em;*/
 	font-size: 2vmin;
-	font-family: Roboto, Arial, monospace;
-	font-weight: 500;
-	line-height: 1.56;
-	letter-spacing: 0.024444em;
+	font-family: 'PT Sans', Arial, monospace;
+	font-weight: bold;
+	line-height: 1.5;
+	letter-spacing: normal;
 	font-style: normal;
 	color: #ffffff;
+}
+
+.contacts-top p:last-child{
+	margin-top: 8px;
 }
 
 img {
@@ -91,21 +107,23 @@ img {
 }
 
 .slogan p {
-	font-family: 'Roboto Mono', Arial, monospace;
+	font-family: 'SF Sans Pro', Arial, monospace;
 	font-size: 8vmin;
-	font-weight: 500;
+	font-weight: 900;
 	line-height: 1.25;
-	letter-spacing: -0.026388em;
+	font-style: normal;
+	letter-spacing: normal;
 }
 
 .video-button-wrapper {
 	position: absolute;
 	top: 58.888888%;
 	width: 20.833333%;
-	height: 6.666666%;
+	height: 7.111111%;
 	overflow: hidden;
 	border: 0px solid transparent;
-	border-radius: 10px;
+	background-color: rgba(179, 78, 24, 0.19);
+	border-radius: 32px;
 	z-index: 98;
 }
 .video-button{
@@ -117,11 +135,12 @@ img {
 	user-select: none;
   	text-align: center;
   	outline: none;
-  	font-family: 'Roboto', Arial, monospace;
+  	font-family: 'PT Sans', Arial, monospace;
   	font-size: 2vmin;
   	font-weight: bold;
-  	line-height: 1.56;
-  	letter-spacing: 0;
+  	font-stretch: normal;
+  	line-height: 1.36;
+  	letter-spacing: normal;
   	z-index: 100;
   	background: none;
   	border: none;
@@ -129,18 +148,7 @@ img {
 	box-shadow: none;
 }
 
-.video-button-blur{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	-webkit-filter: blur(15px);
-	filter: blur(15px);
-  	background-color: rgba(241, 105, 33, 0.15);
-  	z-index: 99;
-  	box-shadow: none;
-  	
-}
+
 
 .first-screen{
 	background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),linear-gradient(299deg, rgba(255, 255, 255, 0.5), rgba(241, 105, 33, 0.4)), url(../images/bg.jpeg);
@@ -184,7 +192,7 @@ img {
 	width: 53.333333%;
 	height: 36.666666%;
 	position: absolute;
-	top: 31.666666%;
+	top: 23.333333%;
 
 }
 
@@ -192,7 +200,7 @@ img {
 	width: 53.333333%;
 	height: 51.333333%;
 	position: absolute;
-	top: 24.333333%;
+	top: 23.333333%;
 	display: none;
 }
 
@@ -200,26 +208,28 @@ img {
 	width: 53.333333%;
 	height: 41.555555%;
 	position: absolute;
-	top: 29.222222%;
+	top: 23.333333%;
 	display: none;
 }
 
 .text-header {
 	color: #ffffff;
-	font-family: 'Roboto Mono', Arial, monospace;
+	font-family: 'SF Sans Pro', Arial, monospace;
 	font-size: 8vmin;
-	font-weight: 500;
+	font-weight: 900;
 	line-height: 1.25;
-	letter-spacing: -0.001388em;
+	letter-spacing: normal;
+	font-style: normal;
 }
 
 .content-text {
 	color: #ffffff;
-	font-family: Roboto, Arial, monospace;
-	font-size: 4vmin;
-	font-weight: 500;
-	line-height: 1.22;
-	letter-spacing: 0.011111em;
+	font-family:'Source Sans Pro', Arial, monospace;
+	font-size: 3.555555vmin;
+	font-weight: 600;
+	line-height: 1.5;
+	font-style: normal;
+	letter-spacing: 0.0125em;
 }
 
 .text-wrapper p:nth-child(2) {
@@ -242,6 +252,7 @@ img {
 	width: 100%;
 	height: 100%;
 	display: block;
+	background-image: linear-gradient(311deg, #ffffff, #f16921);
 	
 }
 
@@ -273,19 +284,20 @@ ul {
 
 .description {
 	width: 39.166666%;
-	height: 17.777777%;
+	height: 17.555555%;
 	position: absolute;
-	top: 22.222222%;
+	top: 17.555555%;
 	right: 0%;
 }
 
 .description p {
-	font-family: Roboto, Arial, monospace;
+	font-family: 'Source Sans Pro', Arial, monospace;
 	font-size: 2vmin;
-	color: #7f88a4;
+	color: #828794;
 	font-weight: normal;
+	font-style: normal;
 	line-height: 1.56;
-	letter-spacing: 0.016em;
+	letter-spacing: normal;
 }
 
 .description p:last-child{
@@ -294,23 +306,86 @@ ul {
 
 .third-screen .content>p:nth-child(2){
 	position: absolute;
-	top: 22.222222%;
-	font-family: 'Roboto Mono', Arial, monospace;
-	font-size: 5.555555vmin;
-	font-weight: 500;
-	line-height: 1.2;
-	letter-spacing: -0.032em;
-	color: #1f2435;
+	top: 17.555555%;
+	font-family: 'SF Sans Pro', Arial, monospace;
+	font-size: 5.777777vmin;
+	font-weight: 900;
+	line-height: 1.31;
+	font-style: normal;
+	letter-spacing: normal;
+	color: #050f29;
 }
 
 .third-screen .content>p:nth-child(3){
 	position: absolute;
-	top: 48.888888%;
-	font-family: 'Roboto Mono', Arial, monospace;
-	font-size: 5.555555vmin;
-	font-weight: 500;
-	line-height: 1.2;
-	letter-spacing: -0.032em;
-	color: #1f2435;
+	top: 38%;
+	font-family: 'SF Sans Pro', Arial, monospace;
+	font-size: 3.555555vmin;
+	font-weight: 900;
+	line-height: 1.5;
+	font-style: normal;
+	letter-spacing: normal;
+	color: #050f29;
 }
 
+.top-price {
+	position: relative;
+	top: 45.111111%;
+}
+
+.bot-price {
+	position: relative;
+	top: 55.777777%;
+}
+
+.top-price div, .bot-price div {
+	display: inline-block;
+}
+
+.eight-sessions, .single {
+	margin-left: 6.916666%;
+}
+
+.twelve-sessions {
+	margin-left: 7%;
+}
+
+.price-header {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 2vmin;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.33;
+	letter-spacing: normal;
+	color: #828794;
+	margin-bottom: 1%;
+
+}
+
+.top-price span, .bot-price span {
+	font-family: 'SF Sans Pro', sans-serif;
+	font-size: 4vmin;
+	font-weight: 900;
+	font-style: normal;
+	line-height: 1.11;
+	letter-spacing: normal;
+	color: #050f29;
+}
+
+.bot-price div>p:last-child {
+	font-family: 'SF Sans Pro Regular', sans-serif;
+	font-size: 2.444444vmin;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 1.82;
+	letter-spacing: normal;
+	color: #050f29;
+}
+
+.four-sessions {
+	width: 14.416666%;
+}
+
+.trial {
+	width: 14.416666%;
+}
