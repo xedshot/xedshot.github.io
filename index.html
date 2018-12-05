@@ -26,6 +26,7 @@
 	<section class="first-screen section">
 		
 		<div class="content">
+			<div class="first-page-content">
 			<div class="slogan">
 				<p>EMS — modern way</p>
 				<p>of training</p>
@@ -33,6 +34,7 @@
 			<div class="video-button-wrapper">
 				<button class="video-button">Play video</button>
 			</div>
+		</div>
 			<div class="mouse">
 				<div class="mouse-wheel"></div>
 			</div>
@@ -52,13 +54,13 @@
 			</div>
 			<div class="text-wrapper-2">
 				<p class="text-header">Motivation</p>
-				<p class="content-text">Personal training is a key part of EMS</p>
-				<p class="content-text">training as each session is monitored closely</p>
-				<p class="content-text">by the trainer. Their job is to find a balance</p>
-				<p class="content-text">between the performance level the</p>
-				<p class="content-text">participant is working at and their objectives,</p>
-				<p class="content-text">ensuring motivation levels remain high</p>
-				<p class="content-text">throughout.</p>
+				<p class="content-text">Personal training is a key part of EMS
+				training as each session is monitored closely
+				by the trainer. Their job is to find a balance
+				between the performance level the
+				participant is working at and their objectives,
+				ensuring motivation levels remain high
+				throughout.</p>
 			</div>
 			<div class="text-wrapper-3">
 				<p class="text-header">Safety</p>
@@ -91,13 +93,16 @@
 	</section>
 	<section class="third-screen section">
 		<div class="content">
+			<div class="wrapper-third">
 			<div class="description">
 				<p>Private sessions are designed for clients who are looking for one to one (one trainer, one client) sessions.</p>
-				<p>Semi-private sessions are designed for clients who want to train with a friend or family member, hence one trainer will train two clients at the same time.
+				<p>Semi-private sessions are designed for clients who want to train with a friend or family member, hence one trainer will train two clients at the same time.</p>
 			</div>
+			<div class="price-bold">
 			<p>We have private and<br>
 			semi-private sessions</p>
 			<p>Price-list</p>
+			</div>
 			<div class="top-price">
 				<div class="trial">
 					<p class="price-header">Trial session</p>
@@ -122,9 +127,33 @@
 					<p><span>$70</span> / workout</p>
 				</div>
 			</div>
+			
+			<div class="book-button">
+				<span>Book a session</span>
+				<div class="circle"></div>
+			</div>
+		</div>
 		</div>
 	</section>
-	<section class="fourth-screen section"></section>
+	<section class="fourth-screen section">
+		<div class="content">
+			<div class="fourth-content">
+			<p>Interested in technology?</p>
+			<p>Call us or just leave your phone number and we<br> will call you</p>
+			<form action="#">
+				<div class="form-name">
+					<span>Name</span><br>
+					<input type="text" name="Name" placeholder="John">
+				</div>
+				<div class="form-phone">
+					<span>Phone number</span><br>
+					<input type="text" name="Phone" placeholder="+1 (800) 123 4567">
+				</div>
+				<div class="call-me-button"><span>Call me</span></div>
+			</form>
+		</div>
+		</div>
+	</section>
 </div>
 
 <script type="text/javascript">
@@ -135,12 +164,15 @@
 	var carousel = document.getElementById('carousel');
 	var list = carousel.querySelector('ul');
 	var listElems = carousel.querySelectorAll('li');
-	var position = 0;
+	
+	
+	
 
-
+	
 new fullpage('#fullpage', {
 	//options here
 	licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+	keyboardScrolling: false,
 
 	anchors: ['firstPage','secondPage','thirdPage','fourthPage'],
 
@@ -203,17 +235,89 @@ new fullpage('#fullpage', {
 	afterLoad: function(origin,destination,direction){
 		if(destination.index == 1){
 			if(origin.index == 0){
+				var position = 0;
 				var counter = 0;
+				fullpage_api.setAllowScrolling(false);
+				var elem = document.getElementsByClassName('second-screen section')[0];
+				elem.addEventListener('wheel', mouseWheelHandler);	
 			} else {
+				var position = 200;
 				var counter = 2;
+				fullpage_api.setAllowScrolling(false);
+				var elem = document.getElementsByClassName('second-screen section')[0];
+				elem.addEventListener('wheel', mouseWheelHandler);	
 			}
-			fullpage_api.setAllowScrolling(false);	
 
-			document.getElementsByClassName('second-screen section')[0].onwheel = function(e){
+			console.log(counter);
+			
+
+		function mouseWheelHandler(e){
+
+			e = e || window.event;
+			e.preventDefault();
+  			if(counter == 0 && e.deltaY < 0){
+
+        		fullpage_api.moveTo('firstPage');
+        		fullpage_api.setAllowScrolling(true);
+			}
+
+      		if(counter == 2 && e.deltaY > 0){
+
+        		fullpage_api.moveTo('thirdPage');
+        		fullpage_api.setAllowScrolling(true);
+        		
+            }
+
+     		if(e.deltaY > 0 && counter !=2){
+
+        		//position = Math.max(position - 100,-200);
+        		//list.style.marginLeft = position + '%';
+        		counter = counter + 1;
+        		elem.removeEventListener('wheel', mouseWheelHandler);
+        		setTimeout(function(){elem.addEventListener('wheel', mouseWheelHandler)},400);
+        		console.log(position);
+            } 
+
+      		if(counter !=0 && e.deltaY < 0) {
+
+        		//position = Math.min(position + 100, 0);
+       			//list.style.marginLeft = position + '%';
+        		counter = counter - 1;
+        		elem.removeEventListener('wheel', mouseWheelHandler);
+        		setTimeout(function(){elem.addEventListener('wheel', mouseWheelHandler)},400);
+    			console.log(position);
+      		}
+
+      		switch(counter){
+        	case 0:
+          		document.getElementsByClassName('text-wrapper')[0].style.display = "block";
+          		document.getElementsByClassName('text-wrapper-2')[0].style.display = "none";
+          		list.style.marginLeft = '0%';
+          	break;
+        	case 1:
+          		document.getElementsByClassName('text-wrapper')[0].style.display = "none";
+          		document.getElementsByClassName('text-wrapper-2')[0].style.display = "block";
+          		document.getElementsByClassName('text-wrapper-3')[0].style.display = "none";
+          		list.style.marginLeft = '-100%';
+          	break;
+        	case 2:
+          		document.getElementsByClassName('text-wrapper-2')[0].style.display = "none";
+          		document.getElementsByClassName('text-wrapper-3')[0].style.display = "block";
+          		list.style.marginLeft = '-200%';
+          	break;
+        	default:
+          	break;
+      		}
+		}
+
+
+			
+			/*document.getElementsByClassName('second-screen section')[0].onwheel = function(e){
+
+			
 			if(counter == 0 && e.deltaY < 0){
 				fullpage_api.moveTo('firstPage');
 				fullpage_api.setAllowScrolling(true);
-			
 			}
 
 			if(counter == 2 && e.deltaY > 0){
@@ -221,15 +325,19 @@ new fullpage('#fullpage', {
 				fullpage_api.setAllowScrolling(true);
 				
 			}
+
 			if(e.deltaY > 0 && counter !=2){
 				position = Math.max(position - 100,-200);
 				list.style.marginLeft = position + '%';
-				counter = counter + 1;
+				counter = counter + 1;	
+
 			} 
+
 			if(counter !=0 && e.deltaY < 0) {
 				position = Math.min(position + 100, 0);
 				list.style.marginLeft = position + '%';
 				counter = counter - 1;
+				
 			}
 
 			switch(counter){
@@ -249,7 +357,7 @@ new fullpage('#fullpage', {
 				default:
 					break;
 			}
-		}
+		}*/
 	}
 
 }

@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i');
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,400i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,500,500i');
-
 
 @font-face{
 	font-family: 'SF Sans Pro';
@@ -13,6 +10,7 @@
 	font-family: 'SF Sans Pro Regular';
 	src: url("../fonts/SF-Pro-Display-Regular.otf") format("opentype");
 }
+
 body {
 	width: 100%;
 	margin: 0;
@@ -21,10 +19,12 @@ body {
 }
 
 p {
-	margin:0;
+	margin: 0;
+	padding: 0;
 }
+
 .content{
-	width: 83.33333333%;
+	width: 1200px;
 	height: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -35,7 +35,7 @@ header {
 	width: 100%;
 	position: absolute;
 	top: 0;
-	height: 10%;
+	height: 100px;
 	z-index: 999;
 }
 
@@ -45,7 +45,6 @@ header {
 }
 
 .second-screen {
-	height: 25%;
 	background-color: #f16921; 
 }
 
@@ -61,17 +60,17 @@ div {
 }
 
 .logo {
-	width: 12.916666%;
-	height: 42.222222%;
+	width: 148px;
+	height: 38px;
 	position: absolute;
-	top: 43.333333%;
+	top: 50px;
 	float:left;
 }
 
 .contacts-top {
 	position: absolute;
-	top: 33.333333%;
-	right:0%;
+	top: 40px;
+	right: 0%;
 	float:right;
 	text-align: right;
 }
@@ -79,7 +78,7 @@ div {
 
 .contacts-top p {
 	/*font-size: 1.125em;*/
-	font-size: 2vmin;
+	font-size: 16px;
 	font-family: 'PT Sans', Arial, monospace;
 	font-weight: bold;
 	line-height: 1.5;
@@ -97,18 +96,23 @@ img {
 	max-width: 100%;
 }
 
-.slogan {
-	height: 20%;
-	width: 55.083333%;
+.first-page-content{
+	height: 274px;
+	width: 674px;
 	position: absolute;
-	top: 34.222222%;
+	top: 28.266666%;
+}
+
+.slogan {
+	height: 180px;
+	width: 674px;
 	color: #ffffff;
 
 }
 
 .slogan p {
 	font-family: 'SF Sans Pro', Arial, monospace;
-	font-size: 8vmin;
+	font-size: 72px;
 	font-weight: 900;
 	line-height: 1.25;
 	font-style: normal;
@@ -116,10 +120,10 @@ img {
 }
 
 .video-button-wrapper {
-	position: absolute;
-	top: 58.888888%;
-	width: 20.833333%;
-	height: 7.111111%;
+	position: relative;
+	top:30px;
+	width: 250px;
+	height: 64px;
 	overflow: hidden;
 	border: 0px solid transparent;
 	background-color: rgba(179, 78, 24, 0.19);
@@ -136,7 +140,7 @@ img {
   	text-align: center;
   	outline: none;
   	font-family: 'PT Sans', Arial, monospace;
-  	font-size: 2vmin;
+  	font-size: 22px;
   	font-weight: bold;
   	font-stretch: normal;
   	line-height: 1.36;
@@ -151,34 +155,39 @@ img {
 
 
 .first-screen{
-	background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),linear-gradient(299deg, rgba(255, 255, 255, 0.5), rgba(241, 105, 33, 0.4)), url(../images/bg.jpeg);
+	background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),linear-gradient(299deg, rgba(255, 255, 255, 0.5), rgba(241, 105, 33, 0.4)), url(../images/bg.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 .mouse {
-	width: 4.166666%;
-	height: 10%;
+	width: 50px;
+	height: 80px;
 	position: absolute;
-	top: 86.666666%;
-	border: 2px solid white;
-	border-radius: 50%/35%;
+	top: 80.8%;
+	border: 2px solid #ffffff;
+	border-radius: 25px;
 }
 
 .mouse-wheel{
-	width: 8%;
-	height: 12%;
+	width: 4px;
+	height: 9px;
 	background-color: white;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius:30%;
-	animation: scroll 1s infinite linear;
+	border-radius:2px;
+	animation: scroll 1.5s infinite linear;
 
 }
 
 @keyframes scroll {
 	from  {
 		margin-top: 25%;
+	}
+	
+	75%{
+		margin-top: 25%;
+		transform: translateY(70%);
 	}
 
 	to {
@@ -189,33 +198,33 @@ img {
 }
 
 .text-wrapper {
-	width: 53.333333%;
-	height: 36.666666%;
+	width: 640px;
+	height: 239px;
 	position: absolute;
-	top: 23.333333%;
+	top: 24.266666%;
 
 }
 
 .text-wrapper-2 {
-	width: 53.333333%;
-	height: 51.333333%;
+	width: 640px;
+	height: 446px;
 	position: absolute;
-	top: 23.333333%;
+	top: 24.266666%;
 	display: none;
 }
 
 .text-wrapper-3 {
-	width: 53.333333%;
-	height: 41.555555%;
+	width: 640px;
+	height: 350px;
 	position: absolute;
-	top: 23.333333%;
+	top: 24.266666%;
 	display: none;
 }
 
 .text-header {
 	color: #ffffff;
 	font-family: 'SF Sans Pro', Arial, monospace;
-	font-size: 8vmin;
+	font-size: 72px;
 	font-weight: 900;
 	line-height: 1.25;
 	letter-spacing: normal;
@@ -225,22 +234,22 @@ img {
 .content-text {
 	color: #ffffff;
 	font-family:'Source Sans Pro', Arial, monospace;
-	font-size: 3.555555vmin;
+	font-size: 32px;
 	font-weight: 600;
 	line-height: 1.5;
 	font-style: normal;
-	letter-spacing: 0.0125em;
+	letter-spacing: 0.5px;
 }
 
-.text-wrapper p:nth-child(2) {
-	margin-top: 2.222222%;
+.text-wrapper p:nth-child(2), .text-wrapper-2 p:nth-child(2), .text-wrapper-3 p:nth-child(2) {
+	margin-top: 20px;
 }
 
 .image-wrapper {
-	width: 40%;
-	height: 53.333333%;
+	width: 480px;
+	height: 480px;
 	position: absolute;
-	top: 23.333333%;
+	top: 24.266666%;
 	right: 0;
 	background-color: #ffffff;
 	box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
@@ -257,9 +266,9 @@ img {
 }
 
 .carousel {
-	width: 75%;
-	height: 75%;
-	margin: 12.5%;
+	width: 360px;
+	height: 360px;
+	margin: 60px;
 	border-radius: 5%;
 	overflow: hidden;
 }
@@ -282,17 +291,23 @@ ul {
 
 }
 
+.wrapper-third {
+	position: relative;
+	top: 21.066666%;
+	width: 100%;
+	height: 504px;
+}
+
 .description {
-	width: 39.166666%;
-	height: 17.555555%;
+	width: 552px;
+	height: 168px;
 	position: absolute;
-	top: 17.555555%;
 	right: 0%;
 }
 
 .description p {
 	font-family: 'Source Sans Pro', Arial, monospace;
-	font-size: 2vmin;
+	font-size: 18px;
 	color: #828794;
 	font-weight: normal;
 	font-style: normal;
@@ -300,15 +315,17 @@ ul {
 	letter-spacing: normal;
 }
 
-.description p:last-child{
-	margin-top: 4.255319%;
+.description p:last-child {
+	margin-top: 18px;
 }
 
-.third-screen .content>p:nth-child(2){
-	position: absolute;
-	top: 17.555555%;
+.price-bold {
+	height: 232px;
+	width: 552px;
+}
+.price-bold>p:first-child {
 	font-family: 'SF Sans Pro', Arial, monospace;
-	font-size: 5.777777vmin;
+	font-size: 52px;
 	font-weight: 900;
 	line-height: 1.31;
 	font-style: normal;
@@ -316,11 +333,11 @@ ul {
 	color: #050f29;
 }
 
-.third-screen .content>p:nth-child(3){
-	position: absolute;
-	top: 38%;
+.price-bold>p:last-child {
+	position: relative;
+	top: 48px;
 	font-family: 'SF Sans Pro', Arial, monospace;
-	font-size: 3.555555vmin;
+	font-size: 32px;
 	font-weight: 900;
 	line-height: 1.5;
 	font-style: normal;
@@ -329,42 +346,49 @@ ul {
 }
 
 .top-price {
-	position: relative;
-	top: 45.111111%;
+	margin-top: 16px;
+	width: 370px;
+	height: 72px;
 }
 
 .bot-price {
-	position: relative;
-	top: 55.777777%;
+	
+	margin-top: 24px;
+	width: 679px;
+	height: 72px;
 }
 
 .top-price div, .bot-price div {
 	display: inline-block;
 }
 
-.eight-sessions, .single {
-	margin-left: 6.916666%;
+.eight-sessions {
+	margin-left: 83px;
+}
+
+ .single {
+	margin-left: 159px;
 }
 
 .twelve-sessions {
-	margin-left: 7%;
+	margin-left: 88px;
 }
 
 .price-header {
 	font-family: 'PT Sans', sans-serif;
-	font-size: 2vmin;
+	font-size: 18px;
 	font-weight: normal;
 	font-style: normal;
 	line-height: 1.33;
 	letter-spacing: normal;
 	color: #828794;
-	margin-bottom: 1%;
+	margin-bottom: 8px;
 
 }
 
 .top-price span, .bot-price span {
 	font-family: 'SF Sans Pro', sans-serif;
-	font-size: 4vmin;
+	font-size: 36px;
 	font-weight: 900;
 	font-style: normal;
 	line-height: 1.11;
@@ -374,7 +398,7 @@ ul {
 
 .bot-price div>p:last-child {
 	font-family: 'SF Sans Pro Regular', sans-serif;
-	font-size: 2.444444vmin;
+	font-size: 22px;
 	font-weight: 600;
 	font-style: normal;
 	line-height: 1.82;
@@ -383,9 +407,152 @@ ul {
 }
 
 .four-sessions {
-	width: 14.416666%;
+	width: 173px;
 }
 
 .trial {
-	width: 14.416666%;
+	width: 97px;
+}
+
+.book-button {
+	margin-top: 48px;
+	cursor: pointer;
+	position: absolute;
+	height: 64px;
+	width: 256px;
+	background-image: linear-gradient(104deg, #ffa62e, #fb962e 20%, #f8852e 40%, #f3742d 60%, #ef612d 80%, #ea4d2c);
+	border-radius: 32px;
+	box-shadow: 0 15px 60px -20px #ef612d;
+}
+
+.circle {
+	position: absolute;
+	right: 12px;
+	top: 12px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.2);
+	background-image: url(../images/arrow.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.book-button span {
+	position: relative;
+	top: 16px;
+	left: 34px;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	font-style: normal;
+	line-height: 1.36;
+	letter-spacing: normal;
+	color: #ffffff;
+
+}
+
+form div {
+	display: inline-block;
+}
+
+.fourth-content {
+	position: relative;
+	top: 27.2%;
+	width: 100%;
+	height: 320px;
+}
+.fourth-screen p:first-child {
+	font-family: 'SF Sans Pro', sans-serif;
+	font-size: 52px;
+	font-weight: 900;
+	font-style: normal;
+	line-height: 1.31;
+	letter-spacing: normal;
+	color: #050f29;
+
+}
+
+.fourth-screen p:nth-child(2) {
+	font-family: 'SF Sans Pro', sans-serif;
+	font-weight: 900;
+	font-style: normal;
+	font-size: 32px;
+	line-height: 1.5;
+	letter-spacing: normal;
+	color: #050f29;
+	margin-top: 20px;
+}
+
+form {
+	width: 820px;
+	height: 94px;
+	margin-top: 60px;
+	position: relative;
+}
+
+form span {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.33;
+	letter-spacing: normal;
+	color: #828794;
+}
+
+.form-phone {
+	position: relative;
+	margin-left: 30px;
+	width: 250px;
+	height: 100%;
+}
+
+.form-name{
+	width: 250px;
+	height: 100%;
+}
+
+input {
+	width: 230px;
+	height: 64px;
+	border-radius: 60px;
+	border: 1px solid #eff1f6;
+	margin-top: 6px;
+	outline: none;
+	padding-left: 20px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.56;
+	letter-spacing: normal;
+	color: #1f2435;
+}
+
+.call-me-button {
+	margin-left: 30px;
+	cursor: pointer;
+	height: 64px;
+	width: 250px;
+	background-image: linear-gradient(104deg, #ffa62e, #fb962e 20%, #f8852e 40%, #f3742d 60%, #ef612d 80%, #ea4d2c);
+	border-radius: 32px;
+	box-shadow: 0 15px 60px -20px #ef612d;
+	text-align: center;
+	position: absolute;
+	top: 30px;
+}
+
+.call-me-button span{
+	font-family: 'PT Sans', sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	font-style: normal;
+	line-height: 1.36;
+	letter-spacing: normal;
+	color: #ffffff;
+	position: relative;
+	top: 16px;
 }
