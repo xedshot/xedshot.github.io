@@ -174,7 +174,7 @@ new fullpage('#fullpage', {
 	licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
 	keyboardScrolling: false,
 
-	anchors: ['firstPage','secondPage','thirdPage','fourthPage'],
+	//anchors: ['firstPage','secondPage','thirdPage','fourthPage'],
 
 	onLeave: function(origin,destination,direction){
 		
@@ -254,6 +254,7 @@ new fullpage('#fullpage', {
 		function mouseWheelHandler(e){
 
 			e = e || window.event;
+			console.log(e.deltaY);
 			e.preventDefault();
   			if(counter == 0 && e.deltaY < 0){
 
@@ -274,8 +275,9 @@ new fullpage('#fullpage', {
         		//list.style.marginLeft = position + '%';
         		counter = counter + 1;
         		elem.removeEventListener('wheel', mouseWheelHandler);
-        		setTimeout(function(){elem.addEventListener('wheel', mouseWheelHandler)},400);
-        		console.log(position);
+        		setTimeout(function(){
+        			elem.addEventListener('wheel', mouseWheelHandler)},400);
+        		
             } 
 
       		if(counter !=0 && e.deltaY < 0) {
@@ -284,8 +286,9 @@ new fullpage('#fullpage', {
        			//list.style.marginLeft = position + '%';
         		counter = counter - 1;
         		elem.removeEventListener('wheel', mouseWheelHandler);
-        		setTimeout(function(){elem.addEventListener('wheel', mouseWheelHandler)},400);
-    			console.log(position);
+        		setTimeout(function(){
+        			elem.addEventListener('wheel', mouseWheelHandler)},400);
+    			
       		}
 
       		switch(counter){
@@ -309,55 +312,6 @@ new fullpage('#fullpage', {
           	break;
       		}
 		}
-
-
-			
-			/*document.getElementsByClassName('second-screen section')[0].onwheel = function(e){
-
-			
-			if(counter == 0 && e.deltaY < 0){
-				fullpage_api.moveTo('firstPage');
-				fullpage_api.setAllowScrolling(true);
-			}
-
-			if(counter == 2 && e.deltaY > 0){
-				fullpage_api.moveTo('thirdPage');
-				fullpage_api.setAllowScrolling(true);
-				
-			}
-
-			if(e.deltaY > 0 && counter !=2){
-				position = Math.max(position - 100,-200);
-				list.style.marginLeft = position + '%';
-				counter = counter + 1;	
-
-			} 
-
-			if(counter !=0 && e.deltaY < 0) {
-				position = Math.min(position + 100, 0);
-				list.style.marginLeft = position + '%';
-				counter = counter - 1;
-				
-			}
-
-			switch(counter){
-				case 0:
-					document.getElementsByClassName('text-wrapper')[0].style.display = "block";
-					document.getElementsByClassName('text-wrapper-2')[0].style.display = "none";
-					break;
-				case 1:
-					document.getElementsByClassName('text-wrapper')[0].style.display = "none";
-					document.getElementsByClassName('text-wrapper-2')[0].style.display = "block";
-					document.getElementsByClassName('text-wrapper-3')[0].style.display = "none";
-					break;
-				case 2:
-					document.getElementsByClassName('text-wrapper-2')[0].style.display = "none";
-					document.getElementsByClassName('text-wrapper-3')[0].style.display = "block";
-					break;
-				default:
-					break;
-			}
-		}*/
 	}
 
 }
