@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/fullpage.css" />
 	<script type="text/javascript" src="js/fullpage.js"></script>
+	<script type="text/javascript" src="js/wheel-indicator.js"></script>
 	<script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 </head>
 <body>
@@ -178,7 +179,7 @@ new fullpage('#fullpage', {
 
 	onLeave: function(origin,destination,direction){
 		
-		fullpage_api.setScrollingSpeed(400);
+		fullpage_api.setScrollingSpeed(800);
 		var parentElem = document.getElementsByName('header-content')[0];
 		
 		
@@ -237,61 +238,83 @@ new fullpage('#fullpage', {
 			if(origin.index == 0){
 				var position = 0;
 				var counter = 0;
-				fullpage_api.setAllowScrolling(false);
-				var elem = document.getElementsByClassName('second-screen section')[0];
-				elem.addEventListener('wheel', mouseWheelHandler);	
+				fullpage_api.setAllowScrolling(false);	
+				var indicator = new WheelIndicator({
+  				elem: document.getElementsByClassName('second-screen section')[0],
+  				callback: function(e){
+
+    				if(counter == 0 && e.direction == "up"){
+
+        			fullpage_api.moveTo('firstPage');
+        			fullpage_api.setAllowScrolling(true);
+        			indicator.destroy();
+					}
+
+      				if(counter == 2 && e.direction == "down"){
+
+        			fullpage_api.moveTo('thirdPage');
+        			fullpage_api.setAllowScrolling(true);
+        			indicator.destroy();
+           		 	}
+
+     				if(e.direction == "down" && counter !=2){
+
+        			counter = counter + 1;
+        		
+        			} 
+
+      				if(counter !=0 && e.deltaY < 0) {
+
+        			counter = counter - 1;
+        			
+      				}
+
+      				switchImage(counter); 
+  			}
+		});
 			} else {
 				var position = 200;
 				var counter = 2;
 				fullpage_api.setAllowScrolling(false);
-				var elem = document.getElementsByClassName('second-screen section')[0];
-				elem.addEventListener('wheel', mouseWheelHandler);	
+				
+				var indicator = new WheelIndicator({
+  				elem: document.getElementsByClassName('second-screen section')[0],
+  				callback: function(e){
+
+    				if(counter == 0 && e.direction == "up"){
+
+        			fullpage_api.moveTo('firstPage');
+        			fullpage_api.setAllowScrolling(true);
+        			indicator.destroy();
+					}
+
+      				if(counter == 2 && e.direction == "down"){
+
+        			fullpage_api.moveTo('thirdPage');
+        			fullpage_api.setAllowScrolling(true);
+        			indicator.destroy();
+           		 	}
+
+     				if(e.direction == "down" && counter !=2){
+
+        			counter = counter + 1;
+        		
+        			} 
+
+      				if(counter !=0 && e.deltaY < 0) {
+
+        			counter = counter - 1;
+        			
+      				}
+
+      				switchImage(counter); 
+  			}
+		}); 
 			}
 
-			console.log(counter);
 			
-
-		function mouseWheelHandler(e){
-
-			e = e || window.event;
-			console.log(e.deltaY);
-			e.preventDefault();
-  			if(counter == 0 && e.deltaY < 0){
-
-        		fullpage_api.moveTo('firstPage');
-        		fullpage_api.setAllowScrolling(true);
-			}
-
-      		if(counter == 2 && e.deltaY > 0){
-
-        		fullpage_api.moveTo('thirdPage');
-        		fullpage_api.setAllowScrolling(true);
-        		
-            }
-
-     		if(e.deltaY > 0 && counter !=2){
-
-        		//position = Math.max(position - 100,-200);
-        		//list.style.marginLeft = position + '%';
-        		counter = counter + 1;
-        		elem.removeEventListener('wheel', mouseWheelHandler);
-        		setTimeout(function(){
-        			elem.addEventListener('wheel', mouseWheelHandler)},400);
-        		
-            } 
-
-      		if(counter !=0 && e.deltaY < 0) {
-
-        		//position = Math.min(position + 100, 0);
-       			//list.style.marginLeft = position + '%';
-        		counter = counter - 1;
-        		elem.removeEventListener('wheel', mouseWheelHandler);
-        		setTimeout(function(){
-        			elem.addEventListener('wheel', mouseWheelHandler)},400);
-    			
-      		}
-
-      		switch(counter){
+		function switchImage(counter){
+				switch(counter){
         	case 0:
           		document.getElementsByClassName('text-wrapper')[0].style.display = "block";
           		document.getElementsByClassName('text-wrapper-2')[0].style.display = "none";
@@ -311,6 +334,55 @@ new fullpage('#fullpage', {
         	default:
           	break;
       		}
+		}	
+
+		
+
+		function mouseWheelHandler(e){
+
+			e = e || window.event;
+			
+
+  			if(counter == 0 && e.deltaY < 0){
+
+        		fullpage_api.moveTo('firstPage');
+        		fullpage_api.setAllowScrolling(true);
+        		elem.removeEventListener('wheel',mouseWheelHandler);
+        		console.log('removed from handler');
+			}
+
+      		if(counter == 2 && e.deltaY > 0){
+
+        		fullpage_api.moveTo('thirdPage');
+        		fullpage_api.setAllowScrolling(true);
+        		elem.removeEventListener('wheel', mouseWheelHandler);
+        		console.log('removed from handler');
+            }
+
+     		if(e.deltaY > 0 && counter !=2){
+
+        		counter = counter + 1;
+        		elem.removeEventListener('wheel', mouseWheelHandler);
+        		console.log('removed from handler');
+        		setTimeout(function(){
+        			elem.addEventListener('wheel', mouseWheelHandler),
+        			console.log('added from handler');},400);
+        		
+        		
+            } 
+
+      		if(counter !=0 && e.deltaY < 0) {
+
+        		counter = counter - 1;
+        		elem.removeEventListener('wheel', mouseWheelHandler);
+        		console.log('removed from handler');
+        		setTimeout(function(){
+        			elem.addEventListener('wheel', mouseWheelHandler),
+        			console.log('added from handler');},400);
+    			
+      		}
+
+      		switchImage(counter);
 		}
 	}
 
