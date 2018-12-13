@@ -9,14 +9,15 @@
 	<script type="text/javascript" src="js/fullpage.js"></script>
 	<script type="text/javascript" src="js/wheel-indicator.js"></script>
 	<script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src ="js/script.js"></script>
 </head>
 <body>
 	<header id = "header" class="top-bar">
 		<div class="content" name="header-content">
 
-			<img src="images/logo_orange.svg" alt="BODYTEC" class="logo">
+			<img src="images/logo_orange.svg" alt="BODYTEC" class="logo" onclick="toStart()">
 
-			<div class="contacts-top">
+			<div class="contacts-top" onclick = "toGoogleMaps()" style = "cursor: pointer;">
 				<p>+1 (800) 521 4815</p>
 				<p>130 E Seneca St, Ithaca, NY 14850, USA</p>
 			</div>
@@ -156,15 +157,19 @@
 		</div>
 	</section>
 </div>
-
+<!--
+js code goes here 
+-->
 <script type="text/javascript">
 	var imageNew = document.createElement('img');
 		imageNew.src = "images/logo_white.svg";
 		imageNew.className ="logo";
 		imageNew.alt = "BODYTEC";
+		imageNew.onclick = toStart;
 	var carousel = document.getElementById('carousel');
 	var list = carousel.querySelector('ul');
 	var listElems = carousel.querySelectorAll('li');
+	var counter = 0;
 	
 	
 	
@@ -175,7 +180,7 @@ new fullpage('#fullpage', {
 	licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
 	keyboardScrolling: false,
 
-	//anchors: ['firstPage','secondPage','thirdPage','fourthPage'],
+	
 
 	onLeave: function(origin,destination,direction){
 		
@@ -236,11 +241,13 @@ new fullpage('#fullpage', {
 	afterLoad: function(origin,destination,direction){
 		if(destination.index == 1){
 			if(origin.index == 0){
-				var position = 0;
-				var counter = 0;
+				counter = 0;
 				fullpage_api.setAllowScrolling(false);	
+
 				var indicator = new WheelIndicator({
+
   				elem: document.getElementsByClassName('second-screen section')[0],
+
   				callback: function(e){
 
     				if(counter == 0 && e.direction == "up"){
@@ -263,18 +270,18 @@ new fullpage('#fullpage', {
         		
         			} 
 
-      				if(counter !=0 && e.deltaY < 0) {
+      				if(counter !=0 && e.direction == "up") {
 
         			counter = counter - 1;
         			
       				}
 
       				switchImage(counter); 
-  			}
-		});
-			} else {
-				var position = 200;
-				var counter = 2;
+  				}
+				});
+			} 
+			if(origin.index == 2) {
+				counter = 2;
 				fullpage_api.setAllowScrolling(false);
 				
 				var indicator = new WheelIndicator({
@@ -301,94 +308,21 @@ new fullpage('#fullpage', {
         		
         			} 
 
-      				if(counter !=0 && e.deltaY < 0) {
+      				if(counter !=0 && e.direction == "up") {
 
         			counter = counter - 1;
         			
       				}
 
       				switchImage(counter); 
-  			}
-		}); 
-			}
-
-			
-		function switchImage(counter){
-				switch(counter){
-        	case 0:
-          		document.getElementsByClassName('text-wrapper')[0].style.display = "block";
-          		document.getElementsByClassName('text-wrapper-2')[0].style.display = "none";
-          		list.style.marginLeft = '0%';
-          	break;
-        	case 1:
-          		document.getElementsByClassName('text-wrapper')[0].style.display = "none";
-          		document.getElementsByClassName('text-wrapper-2')[0].style.display = "block";
-          		document.getElementsByClassName('text-wrapper-3')[0].style.display = "none";
-          		list.style.marginLeft = '-100%';
-          	break;
-        	case 2:
-          		document.getElementsByClassName('text-wrapper-2')[0].style.display = "none";
-          		document.getElementsByClassName('text-wrapper-3')[0].style.display = "block";
-          		list.style.marginLeft = '-200%';
-          	break;
-        	default:
-          	break;
-      		}
-		}	
-
-		
-
-		function mouseWheelHandler(e){
-
-			e = e || window.event;
-			
-
-  			if(counter == 0 && e.deltaY < 0){
-
-        		fullpage_api.moveTo('firstPage');
-        		fullpage_api.setAllowScrolling(true);
-        		elem.removeEventListener('wheel',mouseWheelHandler);
-        		console.log('removed from handler');
-			}
-
-      		if(counter == 2 && e.deltaY > 0){
-
-        		fullpage_api.moveTo('thirdPage');
-        		fullpage_api.setAllowScrolling(true);
-        		elem.removeEventListener('wheel', mouseWheelHandler);
-        		console.log('removed from handler');
-            }
-
-     		if(e.deltaY > 0 && counter !=2){
-
-        		counter = counter + 1;
-        		elem.removeEventListener('wheel', mouseWheelHandler);
-        		console.log('removed from handler');
-        		setTimeout(function(){
-        			elem.addEventListener('wheel', mouseWheelHandler),
-        			console.log('added from handler');},400);
-        		
-        		
-            } 
-
-      		if(counter !=0 && e.deltaY < 0) {
-
-        		counter = counter - 1;
-        		elem.removeEventListener('wheel', mouseWheelHandler);
-        		console.log('removed from handler');
-        		setTimeout(function(){
-        			elem.addEventListener('wheel', mouseWheelHandler),
-        			console.log('added from handler');},400);
-    			
-      		}
-
-      		switchImage(counter);
+  				}
+				}); 
+			}	
 		}
 	}
 
-}
-
 });
+
 
 </script>
 </body>
