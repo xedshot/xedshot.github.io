@@ -26,6 +26,15 @@
 	</header>
 <div id="fullpage">
 	<section class="first-screen section">
+		<video id="startVideo" loop muted data-autoplay>
+			<source src ="images/video30.mp4" type="video/mp4">
+		</video>
+		<div class="modal-wrapper hiddenClass" onclick="closeModal()"></div>
+		<div class="modal hiddenClass">
+			<iframe id="youtubeVideo" width="100%" height="100%" src="https://www.youtube.com/embed/jvo0CSIb9IU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		
+		
 		
 		<div class="content">
 			<div class="first-page-content">
@@ -34,7 +43,7 @@
 				<p>of training</p>
 			</div>
 			<div class="video-button-wrapper">
-				<button class="video-button">Play video</button>
+				<button id ="video-button" class="video-button" onclick="openModal()">Play video</button>
 			</div>
 		</div>
 			<div class="mouse">
@@ -144,12 +153,12 @@
 			<p>Call us or just leave your phone number and we<br> will call you</p>
 			<form action="#">
 				<div class="form-name">
-					<span>Name</span><br>
-					<input type="text" name="Name" placeholder="John">
+					<input type="text" name="Name" required>
+					<span class = "bigPlaceholder">Name</span>
 				</div>
 				<div class="form-phone">
-					<span>Phone number</span><br>
-					<input type="text" name="Phone" placeholder="+1 (800) 123 4567">
+					<input type="text" name="Phone" required>
+					<span class= "bigPlaceholder">Phone number</span>
 				</div>
 				<div class="call-me-button"><span>Call me</span></div>
 			</form>

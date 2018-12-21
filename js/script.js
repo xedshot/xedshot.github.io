@@ -32,3 +32,22 @@ function switchImage(counter){
       		}
       		
 		}
+
+function openModal(){
+	
+	[].forEach.call(document.getElementsByClassName('hiddenClass'),function(item,i,arr){
+		item.style.visibility = "visible";
+		document.getElementById('startVideo').pause();
+	})
+	
+}
+
+function closeModal(){
+	[].forEach.call(document.getElementsByClassName('hiddenClass'),function(item,i,arr){
+		item.style.visibility = "hidden";
+		var videoSrc = document.getElementById('youtubeVideo').getAttribute('src');
+		document.getElementById('youtubeVideo').setAttribute('src', videoSrc);
+		document.getElementById('startVideo').play();
+	})
+}
+
