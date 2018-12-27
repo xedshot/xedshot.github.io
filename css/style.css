@@ -632,3 +632,86 @@ input {
 	position: relative;
 	top: 16px;
 }
+
+.top-panel {
+	background: #39464e;
+    position: fixed;
+    right: 0;
+    height: 100%;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    transform: translateX(100%);
+    z-index: 9998;
+}
+
+.message {
+    color: red;
+    font-weight: 600;
+    position: relative;
+    padding: 2em;
+    margin: 0 auto;
+}
+
+.open {
+   position: absolute;
+   clip: rect(0 0 0 0);
+   opacity: 0;
+}
+
+label.btn {
+    display: block;
+    position: absolute;
+    top: 10%;
+    right: 100%;
+    cursor: pointer;
+    background: #2bbbad;
+    border-radius: 0 0 3px 3px;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 100%;
+    line-height: 1em;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    z-index: 9999;
+}
+
+label.btn:hover {
+    -webkit-transition: 0.35s;
+    -moz-transition: 0.35s;
+    transition: 0.35s;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+label.btn:after {
+    content: '\f053';
+    font: normal 18px/1 FontAwesome;
+    text-decoration: inherit;
+}
+
+.open:checked ~ .top-panel {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: 0.35s;
+    -moz-transition: 0.35s;
+    transition: 0.35s
+}
+
+.open:not(:checked) ~ .top-panel {
+    -webkit-transition: 0.35s;
+    -moz-transition: 0.35s;
+    transition: 0.35s
+}
+
+.open:checked ~ .top-panel > label.btn:after {
+    content: '\f054';
+    font: normal 18px/1 FontAwesome
+}
+
