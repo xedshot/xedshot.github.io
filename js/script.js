@@ -1,53 +1,22 @@
-function toStart(){
-	fullpage_api.moveTo(1);
-	setTimeout(function(){location.reload(true)},800);
-	
+$(document).on('click', '.nav__btn', navToggle);
+
+function navToggle(e) {
+    e.preventDefault();
+
+    var $body = $('body');
+
+    if ($body.hasClass('nav-opened')) {
+      $body.removeClass('nav-opened');
+    }
+    else {
+      $body.addClass('nav-opened');
+    }
 }
 
-function toGoogleMaps(){
-	window.open('https://goo.gl/maps/eobm9nDJTFt');
+$(document).on('click', '.nav__link.anchor[href*="#"]', closeMobNav);
+
+function closeMobNav(e) {
+  if ($("body").hasClass('nav-opened')) {
+    $("body").removeClass('nav-opened');
+  }
 }
-
-function switchImage(counter){
-				switch(counter){
-        	case 0:
-          		document.getElementsByClassName('text-wrapper')[0].style.display = "block";
-          		document.getElementsByClassName('text-wrapper-2')[0].style.display = "none";
-          		document.getElementsByClassName('text-wrapper-3')[0].style.display = "none";
-          		list.style.marginLeft = '0%';
-          	break;
-        	case 1:
-          		document.getElementsByClassName('text-wrapper')[0].style.display = "none";
-          		document.getElementsByClassName('text-wrapper-2')[0].style.display = "block";
-          		document.getElementsByClassName('text-wrapper-3')[0].style.display = "none";
-          		list.style.marginLeft = '-100%';
-          	break;
-        	case 2:
-          		document.getElementsByClassName('text-wrapper-2')[0].style.display = "none";
-          		document.getElementsByClassName('text-wrapper-3')[0].style.display = "block";
-          		list.style.marginLeft = '-200%';
-          	break;
-        	default:
-          	break;
-      		}
-      		
-		}
-
-function openModal(){
-	
-	[].forEach.call(document.getElementsByClassName('hiddenClass'),function(item,i,arr){
-		item.style.visibility = "visible";
-		document.getElementById('startVideo').pause();
-	})
-	
-}
-
-function closeModal(){
-	[].forEach.call(document.getElementsByClassName('hiddenClass'),function(item,i,arr){
-		item.style.visibility = "hidden";
-		var videoSrc = document.getElementById('youtubeVideo').getAttribute('src');
-		document.getElementById('youtubeVideo').setAttribute('src', videoSrc);
-		document.getElementById('startVideo').play();
-	})
-}
-
